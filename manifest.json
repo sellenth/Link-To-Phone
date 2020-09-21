@@ -1,0 +1,26 @@
+{
+  "name": "Link2Phone",
+  "version": "0.1",
+  "manifest_version": 2,
+  "description": "Conveniently* send links from your browser to any valid cellphone number. (Install to understand the asterisk)",
+  "permissions": [
+    "https://code.jquery.com/",
+    "https://api.emailjs.com/api/v1.0/email/send",
+    "background",
+    "storage",
+    "activeTab"
+  ],
+  "browser_action": {
+    "default_icon": {},
+    "default_popup": "popup.html",
+    "default_title": "Link2Phone",
+    "options_page": "options.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*/*"],
+      "js": ["jquery.min.js"],
+      "run_at": "document_start"
+    }
+  ]
+}
