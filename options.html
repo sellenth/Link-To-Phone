@@ -11,10 +11,50 @@
     </style>
   </head>
   <body>
-    <div id="buttonDiv"></div>
-    <div>
-      <p>Choose a different background color!</p>
-    </div>
+    <form>
+      <label for="number">10 Digit Phone Number (digits only)</label>
+      <input
+        type="tel"
+        id="number"
+        name="number"
+        required
+        pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
+      /><br /><br />
+      <label for="color"
+        >Carrier
+        <a target="_blank" href="https://www.freecarrierlookup.com/"
+          >?</a
+        ></label
+      ><br />
+      <select id="carrier">
+        <option value="att">AT&T</option>
+        <option value="tmobile">T-Mobile</option>
+        <option value="verizon">Verizon</option>
+        <option value="sprint">Sprint</option>
+        <option value="xfinity">Xfinity</option>
+        <option value="virgin">Virgin Wireless</option>
+        <option value="tracfone">Tracfone</option>
+        <option value="simple">Simple</option>
+        <option value="mint">Mint</option>
+        <option value="red">Red</option>
+        <option value="metro">MetroPCS</option>
+        <option value="boost">Boost Mobile</option>
+        <option value="cricket">Cricket Wireless</option>
+        <option value="republic">Republic Wireless</option>
+        <option value="fi">Google Fi</option>
+        <option value="uscellular">U.S. Cellular</option>
+        <option value="ting">Ting</option>
+        <option value="consumer">Consumer Wireless</option>
+        <option value="cspire">CSpire</option>
+        <option value="page">Page</option>
+      </select>
+      <br />
+      <br />
+      <input id="submit" type="submit" value="Submit" />
+    </form>
+
+    <div id="status"></div>
+    <p>Links will be sent to this number by default.</p>
   </body>
   <script src="options.js"></script>
 </html>
