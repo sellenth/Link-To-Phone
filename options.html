@@ -2,11 +2,55 @@
 <html>
   <head>
     <style>
-      button {
-        height: 30px;
+      .button {
+        color: black;
+        border: 0;
+        border-radius: 4px;
+        transition: 0.6s;
+        overflow: hidden;
+      }
+      .button:focus {
+        outline: 0;
+      }
+      .button:before {
+        content: "";
+        display: block;
+        position: absolute;
+        background: rgba(255, 255, 255, 0.5);
+        width: 60px;
+        height: 100%;
+        left: 0;
+        top: 0;
+        opacity: 0.5;
+        filter: blur(30px);
+        transform: translateX(-100px) skewX(-15deg);
+      }
+      .button:after {
+        content: "";
+        display: block;
+        position: absolute;
+        background: rgba(255, 255, 255, 0.2);
         width: 30px;
-        outline: none;
-        margin: 10px;
+        height: 100%;
+        left: 30px;
+        top: 0;
+        opacity: 0;
+        filter: blur(5px);
+        transform: translateX(-100px) skewX(-15deg);
+      }
+      .button:hover {
+        background: #338033;
+        cursor: pointer;
+      }
+      .button:hover:before {
+        transform: translateX(300px) skewX(-15deg);
+        opacity: 0.6;
+        transition: 0.7s;
+      }
+      .button:hover:after {
+        transform: translateX(300px) skewX(-15deg);
+        opacity: 1;
+        transition: 0.7s;
       }
     </style>
   </head>
@@ -19,38 +63,8 @@
         name="number"
         required
         pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
-      /><br /><br />
-      <label for="color"
-        >Carrier
-        <a target="_blank" href="https://www.freecarrierlookup.com/"
-          >?</a
-        ></label
-      ><br />
-      <select id="carrier">
-        <option value="att">AT&T</option>
-        <option value="tmobile">T-Mobile</option>
-        <option value="verizon">Verizon</option>
-        <option value="sprint">Sprint</option>
-        <option value="xfinity">Xfinity</option>
-        <option value="virgin">Virgin Wireless</option>
-        <option value="tracfone">Tracfone</option>
-        <option value="simple">Simple</option>
-        <option value="mint">Mint</option>
-        <option value="red">Red</option>
-        <option value="metro">MetroPCS</option>
-        <option value="boost">Boost Mobile</option>
-        <option value="cricket">Cricket Wireless</option>
-        <option value="republic">Republic Wireless</option>
-        <option value="fi">Google Fi</option>
-        <option value="uscellular">U.S. Cellular</option>
-        <option value="ting">Ting</option>
-        <option value="consumer">Consumer Wireless</option>
-        <option value="cspire">CSpire</option>
-        <option value="page">Page</option>
-      </select>
-      <br />
-      <br />
-      <input id="submit" type="submit" value="Submit" />
+      />
+      <input class="button" id="submit" type="submit" value="Submit" />
     </form>
 
     <div id="status"></div>

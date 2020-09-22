@@ -4,7 +4,7 @@
   "manifest_version": 2,
   "description": "Conveniently* send links from your browser to any valid cellphone number. (Install to understand the asterisk)",
   "permissions": [
-    "https://api.emailjs.com/api/v1.0/email/send",
+    "https://api.twilio.com/",
     "background",
     "storage",
     "activeTab"

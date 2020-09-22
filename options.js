@@ -1,11 +1,9 @@
 function save_options(e) {
   e.preventDefault();
   const number = document.getElementById("number").value;
-  const carrier = document.getElementById("carrier").value;
   chrome.storage.sync.set(
     {
       number: number,
-      carrier: carrier,
     },
     function () {
       // Update status to let user know options were saved.
@@ -25,11 +23,9 @@ function restore_options() {
   chrome.storage.sync.get(
     {
       number: "0123456789",
-      carrier: "att",
     },
     function (items) {
       document.getElementById("number").value = items.number;
-      document.getElementById("carrier").value = items.carrier;
     }
   );
 }

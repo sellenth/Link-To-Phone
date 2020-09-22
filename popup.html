@@ -2,13 +2,82 @@
 <html>
   <head>
     <style>
+      body {
+        margin: 0;
+      }
       button {
-        outline: none;
+        background: darkslategray;
+        padding: 10px;
+        color: #ccc;
+        width: 200px;
+        border: 0;
+        font-size: 18px;
+        font-family: "Raleway", sans-serif;
+        transition: 0.6s;
+        overflow: hidden;
+      }
+      button:focus {
+        outline: 0;
+      }
+      button:before {
+        content: "";
+        display: block;
+        position: absolute;
+        background: rgba(255, 255, 255, 0.5);
+        width: 60px;
+        height: 100%;
+        left: 0;
+        top: 0;
+        opacity: 0.5;
+        filter: blur(30px);
+        transform: translateX(-100px) skewX(-15deg);
+      }
+      button:after {
+        content: "";
+        display: block;
+        position: absolute;
+        background: rgba(255, 255, 255, 0.2);
+        width: 30px;
+        height: 100%;
+        left: 30px;
+        top: 0;
+        opacity: 0;
+        filter: blur(5px);
+        transform: translateX(-100px) skewX(-15deg);
+      }
+      button:hover {
+        background: #338033;
+        cursor: pointer;
+      }
+      button:hover:before {
+        transform: translateX(300px) skewX(-15deg);
+        opacity: 0.6;
+        transition: 0.7s;
+      }
+      button:hover:after {
+        transform: translateX(300px) skewX(-15deg);
+        opacity: 1;
+        transition: 0.7s;
+      }
+      p {
+        margin: 0px;
+      }
+      .url {
+        line-height: 35px;
+        font-weight: 800;
+        font-size: xxx-large;
+      }
+      .bottomText {
+        font-size: small;
       }
     </style>
   </head>
   <body>
-    <button id="sendMail">Send current URL to default device</button>
+    <button id="sendMail">
+      <p>Send current</p>
+      <p class="url">URL</p>
+      <p class="bottomText">to default device</p>
+    </button>
     <script src="popup.js"></script>
   </body>
 </html>
