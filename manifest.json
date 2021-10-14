@@ -1,10 +1,10 @@
 {
-  "name": "Link2Phone",
+  "name": "Link To Phone",
   "version": "0.1",
   "manifest_version": 2,
-  "description": "Conveniently* send links from your browser to any valid cellphone number. (Install to understand the asterisk)",
+  "description": "Conveniently send links from your browser to any valid US cellphone number.",
   "permissions": [
-    "https://api.twilio.com/",
+    "https://www.link-to-phone.com/",
     "background",
     "storage",
     "activeTab"
@@ -16,7 +16,8 @@
   "browser_action": {
     "default_icon": {},
     "default_popup": "popup.html",
-    "default_title": "Link2Phone",
+    "default_title": "Link-To-Phone",
     "options_page": "options.html"
-  }
+  },
+  "icons": { "128": "icon.png" }
 }

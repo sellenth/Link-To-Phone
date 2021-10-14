@@ -1,74 +1,64 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <style>
-      .button {
-        color: black;
-        border: 0;
-        border-radius: 4px;
-        transition: 0.6s;
-        overflow: hidden;
-      }
-      .button:focus {
-        outline: 0;
-      }
-      .button:before {
-        content: "";
-        display: block;
-        position: absolute;
-        background: rgba(255, 255, 255, 0.5);
-        width: 60px;
-        height: 100%;
-        left: 0;
-        top: 0;
-        opacity: 0.5;
-        filter: blur(30px);
-        transform: translateX(-100px) skewX(-15deg);
-      }
-      .button:after {
-        content: "";
-        display: block;
-        position: absolute;
-        background: rgba(255, 255, 255, 0.2);
-        width: 30px;
-        height: 100%;
-        left: 30px;
-        top: 0;
-        opacity: 0;
-        filter: blur(5px);
-        transform: translateX(-100px) skewX(-15deg);
-      }
-      .button:hover {
-        background: #338033;
-        cursor: pointer;
-      }
-      .button:hover:before {
-        transform: translateX(300px) skewX(-15deg);
-        opacity: 0.6;
-        transition: 0.7s;
-      }
-      .button:hover:after {
-        transform: translateX(300px) skewX(-15deg);
-        opacity: 1;
-        transition: 0.7s;
-      }
-    </style>
-  </head>
-  <body>
-    <form>
-      <label for="number">10 Digit Phone Number (digits only)</label>
-      <input
-        type="tel"
-        id="number"
-        name="number"
-        required
-        pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
-      />
-      <input class="button" id="submit" type="submit" value="Submit" />
-    </form>
 
-    <div id="status"></div>
-    <p>Links will be sent to this number by default.</p>
-  </body>
-  <script src="options.js"></script>
+<head>
+  <style>
+    .button {
+      color: black;
+      border: 0;
+      border-radius: 4px;
+      transition: 0.6s;
+      overflow: hidden;
+    }
+
+    .button:hover {
+      background-color: limegreen;
+      transition-duration: background-color 1s;
+    }
+
+    p {
+      text-align: center;
+    }
+
+    .alignInput {
+      display: grid;
+      grid-template-columns: 30% 70%;
+    }
+    .alignInput label {
+      justify-self: right;
+      margin-right: 3px;
+    }
+
+    form {
+      display: grid;
+      grid-row-gap: 10px;
+    }
+
+    #save {
+      height: 3em;
+    }
+  </style>
+</head>
+
+<body>
+  <form>
+    <p>Enter your user details. If you haven't registered already, please do so at <a
+        href="https://www.link-to-phone.com">https://www.link-to-phone.com</a></p>
+    <div class="alignInput">
+      <label for="phoneNumber">Phone Number +1</label>
+      <input type="tel" id="phoneNumber" name="phoneNumber"/>
+    </div>
+
+    <div class="alignInput">
+      <label for="password">Password</label>
+    <input type="password" id="password" name="password" maxlength="25" />
+      </div>
+    <input class="button" id="save" type="submit" value="Save" />
+  </form>
+
+  <div id="status"></div>
+  <p>Links will be sent to this number by default.</p>
+</body>
+<script src="options.js"></script>
+
 </html>
